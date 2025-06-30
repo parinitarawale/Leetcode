@@ -1,0 +1,34 @@
+/*
+Blind 75 - Day 1
+
+Intuition
+Basically check/compare every index. If the solution is correct, return index.
+
+Approach
+Created 2 loops, for each index. Both will iterate till end of nums.
+Check if the index adds up to target, if not, move ahead.
+Return first value.
+If no value is found, return null outside both loops.
+Complexity
+Time complexity:
+O(n²)
+
+Space complexity:
+O(1)
+
+Can be done using Hashmaps too. This is brute force.
+
+Code
+*/
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        for (int i=0; i<nums.length; i++){
+            for (int j=i+1; j<nums.length; j++){
+                if(nums[i]+nums[j]==target){
+                    return new int[]{i,j};
+                }
+            }
+        }
+        return null;
+    }
+}
