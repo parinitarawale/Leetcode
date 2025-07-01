@@ -1,0 +1,28 @@
+Blind 75 - Day 2
+
+Intuition
+  First tried 2 loops to check duplicates.
+  Got TLE
+
+Approach
+  ChatGPT suggester to sort the array and then check the next eelement.
+
+Time complexity:
+  O(n log n) (due to sorting)
+
+Space complexity:
+  O(1)
+
+Code
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+
+        for (int i=0; i<nums.length-1; i++){
+                if(nums[i]==nums[i+1]){
+                    return true; 
+                }
+        }
+        return false; 
+    }
+}
